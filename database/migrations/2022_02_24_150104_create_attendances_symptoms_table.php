@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('attendances_symptoms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('attendance_id')->constrained('attendances');
-            $table->string('description');
+            $table->text('description');
             $table->string('intensity');
             $table->string('since');
             $table->timestamps();

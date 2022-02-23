@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('sector');
             $table->string('city');
             $table->string('province');
+            $table->string('zipcode');
             $table->softDeletes();
             $table->timestamps();
         });

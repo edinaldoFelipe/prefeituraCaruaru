@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreHealth_unitsRequest;
-use App\Http\Requests\UpdateHealth_unitsRequest;
-use App\Models\Health_units;
+use App\Http\Requests\StoreHealthUnitsRequest;
+use App\Http\Requests\UpdateHealthUnitsRequest;
+use App\Models\HealthUnits;
 
 class HealthUnitsController extends Controller
 {
@@ -31,10 +31,10 @@ class HealthUnitsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreHealth_unitsRequest  $request
+     * @param  \App\Http\Requests\StoreHealthUnitsRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreHealth_unitsRequest $request)
+    public function store(StoreHealthUnitsRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class HealthUnitsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Health_units  $health_units
+     * @param  \App\Models\HealthUnits  $healthUnits
      * @return \Illuminate\Http\Response
      */
-    public function show(Health_units $health_units)
+    public function show(HealthUnits $healthUnits)
     {
         //
     }
@@ -53,10 +53,10 @@ class HealthUnitsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Health_units  $health_units
+     * @param  \App\Models\HealthUnits  $healthUnits
      * @return \Illuminate\Http\Response
      */
-    public function edit(Health_units $health_units)
+    public function edit(HealthUnits $healthUnits)
     {
         //
     }
@@ -64,11 +64,11 @@ class HealthUnitsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateHealth_unitsRequest  $request
-     * @param  \App\Models\Health_units  $health_units
+     * @param  \App\Http\Requests\UpdateHealthUnitsRequest  $request
+     * @param  \App\Models\HealthUnits  $healthUnits
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateHealth_unitsRequest $request, Health_units $health_units)
+    public function update(UpdateHealthUnitsRequest $request, HealthUnits $healthUnits)
     {
         //
     }
@@ -76,10 +76,10 @@ class HealthUnitsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Health_units  $health_units
+     * @param  \App\Models\HealthUnits  $healthUnits
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Health_units $health_units)
+    public function destroy(HealthUnits $healthUnits)
     {
         //
     }

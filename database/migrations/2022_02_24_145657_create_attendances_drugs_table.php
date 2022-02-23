@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('dosage');
             $table->string('orientation');
-            $table->string('applied');
+            $table->boolean('applied')->default(false);
             $table->timestamps();
         });
     }

@@ -16,11 +16,19 @@ return new class extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('cpf')->unique()->nullable();
+            $table->string('cpf')->unique()->nullable();
             $table->string('rg')->unique()->nullable();
             $table->integer('sus')->unique()->nullable();
             $table->enum('genre', ['M', 'F']);
             $table->date('birthday')->nullable();
+            $table->string('phoneNumber')->nullable();
+            $table->string('email')->nullable();
+            $table->string('street')->nullable();
+            $table->string('number')->nullable();
+            $table->string('sector')->nullable();
+            $table->string('city')->nullable();
+            $table->string('province')->nullable();
+            $table->string('zipcode')->nullable();
             $table->string('password')->nullable();
             $table->softDeletes();
             $table->timestamps();

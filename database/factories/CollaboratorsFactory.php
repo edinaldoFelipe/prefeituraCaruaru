@@ -16,8 +16,15 @@ class CollaboratorsFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create('pt_BR');
         return [
-            //
+            'name' => $this->faker->name(),
+            'enroll' => $this->faker->randomNumber(),
+            'cpf' => $faker->cpf(false),
+            'phoneNumber' => $this->faker->tollFreePhoneNumber(),
+            'email' => $this->faker->safeEmail(),
+            'level' => $this->faker->randomElement(['doctor', 'master']),
+            'password' => \Crypt::encrypt($this->faker -> password())
         ];
     }
 }
