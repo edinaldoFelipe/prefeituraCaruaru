@@ -8,6 +8,17 @@ use App\Models\Patients;
 
 class PatientsController extends Controller
 {
+
+    /**
+     * Display view list.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function list()
+    {
+        return view('patients.list');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,17 +26,17 @@ class PatientsController extends Controller
      */
     public function index()
     {
-        //
+        return Patients::all();
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('patients.create');
     }
 
     /**
@@ -45,20 +56,20 @@ class PatientsController extends Controller
      * @param  \App\Models\Patients  $patients
      * @return \Illuminate\Http\Response
      */
-    public function show(Patients $patients)
+    public function show(Patients $patients, $id)
     {
-        //
+        return $patients::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Patients  $patients
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
-    public function edit(Patients $patients)
+    public function edit(Patients $patients, $hash)
     {
-        //
+        return view('patients.edit');
     }
 
     /**
@@ -79,8 +90,8 @@ class PatientsController extends Controller
      * @param  \App\Models\Patients  $patients
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Patients $patients)
+    public function destroy(Patients $patients, $id)
     {
-        //
+        return $patients::find($id)->delete();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Attendances_drugs;
+use App\Models\AttendancesDrugs;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class AttendancesDrugsPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Attendances_drugs  $attendancesDrugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Attendances_drugs $attendancesDrugs)
+    public function view(User $user, AttendancesDrugs $attendancesDrugs)
     {
         //
     }
@@ -48,10 +48,10 @@ class AttendancesDrugsPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Attendances_drugs  $attendancesDrugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Attendances_drugs $attendancesDrugs)
+    public function update(User $user, AttendancesDrugs $attendancesDrugs)
     {
         //
     }
@@ -60,10 +60,10 @@ class AttendancesDrugsPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Attendances_drugs  $attendancesDrugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Attendances_drugs $attendancesDrugs)
+    public function delete(User $user, AttendancesDrugs $attendancesDrugs)
     {
         //
     }
@@ -72,10 +72,10 @@ class AttendancesDrugsPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Attendances_drugs  $attendancesDrugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Attendances_drugs $attendancesDrugs)
+    public function restore(User $user, AttendancesDrugs $attendancesDrugs)
     {
         //
     }
@@ -84,10 +84,10 @@ class AttendancesDrugsPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Attendances_drugs  $attendancesDrugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Attendances_drugs $attendancesDrugs)
+    public function forceDelete(User $user, AttendancesDrugs $attendancesDrugs)
     {
         //
     }

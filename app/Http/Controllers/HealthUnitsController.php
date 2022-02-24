@@ -9,23 +9,33 @@ use App\Models\HealthUnits;
 class HealthUnitsController extends Controller
 {
     /**
+     * Display view list.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function list()
+    {
+        return view('healthunits.list');
+    }
+    
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return HealthUnits::all();
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('healthunits.create');
     }
 
     /**
@@ -36,7 +46,6 @@ class HealthUnitsController extends Controller
      */
     public function store(StoreHealthUnitsRequest $request)
     {
-        //
     }
 
     /**
@@ -45,20 +54,20 @@ class HealthUnitsController extends Controller
      * @param  \App\Models\HealthUnits  $healthUnits
      * @return \Illuminate\Http\Response
      */
-    public function show(HealthUnits $healthUnits)
+    public function show(HealthUnits $healthUnits, $id)
     {
-        //
+        return $healthUnits::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\HealthUnits  $healthUnits
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function edit(HealthUnits $healthUnits)
     {
-        //
+        return view('healthunits.edit');
     }
 
     /**
@@ -79,8 +88,8 @@ class HealthUnitsController extends Controller
      * @param  \App\Models\HealthUnits  $healthUnits
      * @return \Illuminate\Http\Response
      */
-    public function destroy(HealthUnits $healthUnits)
+    public function destroy(HealthUnits $healthUnits, $id)
     {
-        //
+        return $healthUnits::find($id)->delete();
     }
 }

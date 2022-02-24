@@ -20,8 +20,6 @@ return new class extends Migration
             $table->string('cpf')->unique();
             $table->string('phoneNumber')->nullable();
             $table->string('email')->nullable();
-            $table->enum('level', ['doctor', 'master']);
-            $table->string('password')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

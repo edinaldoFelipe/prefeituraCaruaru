@@ -4,10 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMedical_schedulesRequest;
 use App\Http\Requests\UpdateMedical_schedulesRequest;
-use App\Models\Medical_schedules;
+use App\Models\MedicalSchedules;
 
 class MedicalSchedulesController extends Controller
 {
+    /**
+     * Display view list.
+     *
+     * @return \\Illuminate\View\View
+     */
+    public function list()
+    {
+        return view('medicalschedules.list');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -15,17 +25,17 @@ class MedicalSchedulesController extends Controller
      */
     public function index()
     {
-        //
+        return MedicalSchedules::with('collaborator', 'healt_hunit')->get();
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('medicalschedules.create');
     }
 
     /**
@@ -42,33 +52,33 @@ class MedicalSchedulesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Medical_schedules  $medical_schedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Http\Response
      */
-    public function show(Medical_schedules $medical_schedules)
+    public function show(MedicalSchedules $medicalSchedules, $id)
     {
-        //
+        return $medicalSchedules::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Medical_schedules  $medical_schedules
-     * @return \Illuminate\Http\Response
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
+     * @return \Illuminate\View\View
      */
-    public function edit(Medical_schedules $medical_schedules)
+    public function edit(MedicalSchedules $medicalSchedules)
     {
-        //
+        return view('medicalschedules.edit');
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateMedical_schedulesRequest  $request
-     * @param  \App\Models\Medical_schedules  $medical_schedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMedical_schedulesRequest $request, Medical_schedules $medical_schedules)
+    public function update(UpdateMedical_schedulesRequest $request, MedicalSchedules $medicalSchedules)
     {
         //
     }
@@ -76,11 +86,11 @@ class MedicalSchedulesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Medical_schedules  $medical_schedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medical_schedules $medical_schedules)
+    public function destroy(MedicalSchedules $medicalSchedules, $id)
     {
-        //
+        return $medicalSchedules::find($id)->delete();
     }
 }

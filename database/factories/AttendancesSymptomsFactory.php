@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Attendances;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Attendances_symptoms>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\AttendancesSymptoms>
  */
 class AttendancesSymptomsFactory extends Factory
 {

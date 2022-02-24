@@ -29,7 +29,6 @@ return new class extends Migration
             $table->string('city')->nullable();
             $table->string('province')->nullable();
             $table->string('zipcode')->nullable();
-            $table->string('password')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

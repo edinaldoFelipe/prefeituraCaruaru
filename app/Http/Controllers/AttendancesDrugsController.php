@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAttendances_drugsRequest;
 use App\Http\Requests\UpdateAttendances_drugsRequest;
-use App\Models\Attendances_drugs;
+use App\Models\AttendancesDrugs;
 
 class AttendancesDrugsController extends Controller
 {
@@ -13,9 +13,9 @@ class AttendancesDrugsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($attendance_id)
     {
-        //
+        return AttendancesDrugs::where('attendance_id', $attendance_id)->get();
     }
 
     /**
@@ -42,21 +42,21 @@ class AttendancesDrugsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Attendances_drugs  $attendances_drugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Http\Response
      */
-    public function show(Attendances_drugs $attendances_drugs)
+    public function show(AttendancesDrugs $attendancesDrugs)
     {
-        //
+        return AttendancesDrugs::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Attendances_drugs  $attendances_drugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Http\Response
      */
-    public function edit(Attendances_drugs $attendances_drugs)
+    public function edit(AttendancesDrugs $attendancesDrugs)
     {
         //
     }
@@ -65,10 +65,10 @@ class AttendancesDrugsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateAttendances_drugsRequest  $request
-     * @param  \App\Models\Attendances_drugs  $attendances_drugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateAttendances_drugsRequest $request, Attendances_drugs $attendances_drugs)
+    public function update(UpdateAttendances_drugsRequest $request, AttendancesDrugs $attendancesDrugs)
     {
         //
     }
@@ -76,11 +76,11 @@ class AttendancesDrugsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Attendances_drugs  $attendances_drugs
+     * @param  \App\Models\AttendancesDrugs  $attendancesDrugs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attendances_drugs $attendances_drugs)
+    public function destroy(AttendancesDrugs $attendancesDrugs, $attendance_id, $id)
     {
-        //
+        return $attendancesSymptoms->find($id)->delete();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\Models\Medical_schedules;
+use App\Models\MedicalSchedules;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class MedicalSchedulesPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Medical_schedules  $medicalSchedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Medical_schedules $medicalSchedules)
+    public function view(User $user, MedicalSchedules $medicalSchedules)
     {
         //
     }
@@ -48,10 +48,10 @@ class MedicalSchedulesPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Medical_schedules  $medicalSchedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Medical_schedules $medicalSchedules)
+    public function update(User $user, MedicalSchedules $medicalSchedules)
     {
         //
     }
@@ -60,10 +60,10 @@ class MedicalSchedulesPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Medical_schedules  $medicalSchedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Medical_schedules $medicalSchedules)
+    public function delete(User $user, MedicalSchedules $medicalSchedules)
     {
         //
     }
@@ -72,10 +72,10 @@ class MedicalSchedulesPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Medical_schedules  $medicalSchedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Medical_schedules $medicalSchedules)
+    public function restore(User $user, MedicalSchedules $medicalSchedules)
     {
         //
     }
@@ -84,10 +84,10 @@ class MedicalSchedulesPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Medical_schedules  $medicalSchedules
+     * @param  \App\Models\MedicalSchedules  $medicalSchedules
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Medical_schedules $medicalSchedules)
+    public function forceDelete(User $user, MedicalSchedules $medicalSchedules)
     {
         //
     }

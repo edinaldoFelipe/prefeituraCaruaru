@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAttendances_symptomsRequest;
 use App\Http\Requests\UpdateAttendances_symptomsRequest;
-use App\Models\Attendances_symptoms;
+use App\Models\AttendancesSymptoms;
 
 class AttendancesSymptomsController extends Controller
 {
@@ -13,9 +13,9 @@ class AttendancesSymptomsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($attendance_id)
     {
-        //
+        return AttendancesSymptoms::where('attendance_id', $attendance_id)->get();
     }
 
     /**
@@ -42,21 +42,21 @@ class AttendancesSymptomsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Attendances_symptoms  $attendances_symptoms
+     * @param  \App\Models\AttendancesSymptoms  $attendancesSymptoms
      * @return \Illuminate\Http\Response
      */
-    public function show(Attendances_symptoms $attendances_symptoms)
+    public function show(AttendancesSymptoms $attendancesSymptoms, $attendance_id, $id)
     {
-        //
+        return AttendancesSymptoms::find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Attendances_symptoms  $attendances_symptoms
+     * @param  \App\Models\AttendancesSymptoms  $attendancesSymptoms
      * @return \Illuminate\Http\Response
      */
-    public function edit(Attendances_symptoms $attendances_symptoms)
+    public function edit(AttendancesSymptoms $attendancesSymptoms)
     {
         //
     }
@@ -65,7 +65,7 @@ class AttendancesSymptomsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateAttendances_symptomsRequest  $request
-     * @param  \App\Models\Attendances_symptoms  $attendances_symptoms
+     * @param  \App\Models\AttendancesSymptoms  $attendancesSymptoms
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateAttendances_symptomsRequest $request, Attendances_symptoms $attendances_symptoms)
@@ -76,11 +76,11 @@ class AttendancesSymptomsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Attendances_symptoms  $attendances_symptoms
+     * @param  \App\Models\AttendancesSymptoms  $attendancesSymptoms
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attendances_symptoms $attendances_symptoms)
+    public function destroy(AttendancesSymptoms $attendancesSymptoms, $attendance_id, $id)
     {
-        //
+        return $attendancesSymptoms->find($id)->delete();
     }
 }

@@ -7,7 +7,7 @@ use App\Models\HealthUnits;
 use App\Models\Collaborators;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Medical_schedules>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MedicalSchedules>
  */
 class MedicalSchedulesFactory extends Factory
 {

@@ -30,8 +30,7 @@ class PatientsFactory extends Factory
            'sector' => $this->faker->state(),
            'city' => $this->faker->city(),
            'province' => $this->faker->stateAbbr(),
-           'zipcode' => $this->faker->postcode(),
-           'password' => \Crypt::encrypt($this->faker -> password())
+           'zipcode' => $this->faker->postcode()
         ];
     }
 }

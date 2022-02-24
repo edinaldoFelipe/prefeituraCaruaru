@@ -9,23 +9,33 @@ use App\Models\Attendances;
 class AttendancesController extends Controller
 {
     /**
+     * Display view list.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function list()
+    {
+        return view('attendances.list');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+         return Attendances::with('collaborator', 'patient', 'health_unit', 'drugs', 'symptoms')->get();
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('attendances.create');
     }
 
     /**
@@ -43,22 +53,22 @@ class AttendancesController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Attendances  $attendances
-     * @return \Illuminate\Http\Response
      */
-    public function show(Attendances $attendances)
+    public function show(Attendances $attendances, string $id)
     {
-        //
+        //withTrashed()
+        return $attendances::with('collaborator', 'patient', 'health_unit', 'drugs', 'symptoms')->find($id);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Attendances  $attendances
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
-    public function edit(Attendances $attendances)
+    public function edit(Attendances $attendances, $hash)
     {
-        //
+        return view('attendances.edit');
     }
 
     /**
@@ -79,8 +89,8 @@ class AttendancesController extends Controller
      * @param  \App\Models\Attendances  $attendances
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attendances $attendances)
+    public function destroy(Attendances $attendances, string $id)
     {
-        //
+        return $attendances->find($id)->delete();
     }
 }
