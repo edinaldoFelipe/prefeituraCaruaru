@@ -9,11 +9,21 @@ class MedicalSchedules extends Model
 {
     use HasFactory;
 
+    /**
+     * Include data from outher tables by foreign key
+     *
+     * @return Model
+     */
     public function collaborator()
     {
         return $this->hasOne(Collaborators::class, 'id', 'collaborator_id');
     }
 
+    /**
+     * Include data from outher tables by foreign key
+     *
+     * @return Model
+     */
     public function healt_hunit()
     {
         return $this->hasOne(HealthUnits::class, 'id', 'health_unit_id');

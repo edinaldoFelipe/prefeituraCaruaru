@@ -70,6 +70,7 @@ use App\Http\Controllers\MedicalSchedulesController;
         Route::get('/patients/{id}', 'show')->name('patients.show');
         Route::put('/patients/{id}', 'update')->name('patients.update');
         Route::delete('/patients/{id}', 'destroy')->name('patients.destroy');
+        Route::get('/patients/{id}/merge/{other_id}', 'merge')->name('patients.merge');
     });
 
     Route::get('/patients/{patient_id}/attendances', [PatientsAttendancesController::class, 'index'])->name('patientsattendances.index');

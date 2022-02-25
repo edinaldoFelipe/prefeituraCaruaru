@@ -20,6 +20,16 @@ class PatientsController extends Controller
     }
 
     /**
+     * Display view list.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function merge()
+    {
+        //
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response

@@ -9,6 +9,11 @@ class AttendancesDrugs extends Model
 {
     use HasFactory;
 
+    /**
+     * Include data from outher tables by foreign key
+     *
+     * @return Model
+     */
     public function attendance()
     {
         return $this->belongsTo(Attendances::class);

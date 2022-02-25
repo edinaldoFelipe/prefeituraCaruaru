@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignId('health_unit_id')->constrained('health_units');
             $table->foreignId('collaborator_id')->constrained('collaborators');
             $table->date('date');
+            $table->string('start_hour');
+            $table->string('end_hour');
             $table->timestamps();
         });
     }

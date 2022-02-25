@@ -5,9 +5,30 @@
             <div class="flex">
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-5 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                <div class="hidden sm:-my-px sm:ml-5 sm:flex">
+                    <x-jet-nav-link class="m-1" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="ml-1" href="{{ route('medicalschedules.list') }}" :active="request()->routeIs('medicalschedules.list')">
+                        {{ __('Agendamentos') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="ml-1" href="{{ route('attendances.list') }}" :active="request()->routeIs('attendances.list')">
+                        {{ __('Atendimentos') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="ml-1" href="{{ route('collaborators.list') }}" :active="request()->routeIs('collaborators.list')">
+                        {{ __('Colaboradores') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="ml-1" href="{{ route('patients.list') }}" :active="request()->routeIs('patients.list')">
+                        {{ __('Pacientes') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="ml-1" href="#">
+                        {{ __('Relatórios') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="ml-1" href="{{ route('healthunits.list') }}" :active="request()->routeIs('healthunits.list')">
+                        {{ __('Unidades') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link class="ml-1" href="{{ route('users.list') }}" :active="request()->routeIs('users.list')">
+                        {{ __('Usuários') }}
                     </x-jet-nav-link>
                 </div>
             </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\CollaboratorsController;
 use App\Http\Controllers\HealthUnitsController;
 use App\Http\Controllers\MedicalSchedulesController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,5 +55,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get('/medicalschedules', 'list')->name('medicalschedules.list');
         Route::get('/medicalschedules/create', 'create')->name('medicalschedules.create');
         Route::get('/medicalschedules/{hash}/edit', 'edit')->name('medicalschedules.edit');
+    });
+
+    Route::controller(UserController::class)->group(function () {
+        Route::get('/users', 'list')->name('users.list');
+        Route::get('/users/create', 'create')->name('users.create');
+        Route::get('/users/{hash}/edit', 'edit')->name('users.edit');
     });
 });

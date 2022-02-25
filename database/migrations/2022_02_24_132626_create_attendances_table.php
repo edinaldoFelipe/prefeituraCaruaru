@@ -20,7 +20,9 @@ return new class extends Migration
             $table->foreignId('health_unit_id')->constrained('health_units');
             $table->boolean('certificate')->default(false);
             $table->text('orientation')->nullable();
-            $table->date('date_return')->nullable();
+            $table->string('start_hour')->nullable();
+            $table->string('end_hour')->nullable();
+            $table->date('return_date')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
