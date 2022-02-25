@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('enroll')->nullable();
             $table->string('cpf')->unique();
+            $table->enum('genre', ['M', 'F']);
+            $table->date('birthday')->nullable();
             $table->string('phoneNumber')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();

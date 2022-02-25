@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('health_units', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('phoneNumber')->nullable();
+            $table->string('email')->nullable();
             $table->string('street');
             $table->string('number');
             $table->string('sector');

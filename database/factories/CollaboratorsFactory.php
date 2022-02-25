@@ -21,6 +21,8 @@ class CollaboratorsFactory extends Factory
             'name' => $this->faker->name(),
             'enroll' => $this->faker->randomNumber(),
             'cpf' => $faker->cpf(false),
+            'genre' => $this->faker->randomElement(['M', 'F']),
+            'birthday' => $this->faker->dateTimeBetween('-100 years', 'now'),
             'phoneNumber' => $this->faker->tollFreePhoneNumber(),
             'email' => $this->faker->safeEmail()
         ];

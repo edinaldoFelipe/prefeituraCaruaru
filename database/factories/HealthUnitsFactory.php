@@ -17,8 +17,10 @@ class HealthUnitsFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->randomElement(['Posto', 'Hospital', 'UPA', 'UBS']) 
+            'name' => $this->faker->randomElement(['Posto', 'Hospital', 'UPA', 'UBS'])
                 . ' ' . $this->faker->state(),
+            'phoneNumber' => $this->faker->tollFreePhoneNumber(),
+            'email' => $this->faker->safeEmail(),
             'street' => $this->faker->streetName(),
             'number' => $this->faker->buildingNumber(),
             'sector' => $this->faker->state(),

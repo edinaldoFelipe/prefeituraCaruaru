@@ -10,7 +10,7 @@ class HomeController extends Controller
     public function index() {
         switch (Auth::user()->level) {
             case 0:
-                return view('dashboard');
+                return view('patient');
             break;
             case 1:
                 return view('collaborator');
